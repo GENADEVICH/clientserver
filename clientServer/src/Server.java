@@ -97,30 +97,29 @@ public class Server {
         out.println();
         out.println("<!DOCTYPE html>");
         out.println("<html><head>");
-        out.println("<title>Accounts List</title>");
-        // Встроенные стили для простоты, но рекомендуется использовать внешние CSS файлы
+        out.println("<title>Список учетных записей</title>");
         out.println("<style>");
-        out.println("body { font-family: Arial, sans-serif; margin: 40px; }");
-        out.println("h1 { color: #333; }");
+        out.println("body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }");
+        out.println(".container { max-width: 800px; margin: 0 auto; padding: 20px; }");
+        out.println("h1 { color: #333; text-align: center; }");
+        out.println(".account-list { background-color: #fff; border-radius: 10px; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); padding: 20px; }");
         out.println("ul { list-style-type: none; padding: 0; }");
-        out.println("li { background: #f9f9f9; margin: 5px 0; padding: 10px; border-radius: 5px; }");
-        out.println(".account-bar { height: 20px; background-color: #4CAF50; color: white; text-align: center; border-radius: 5px; }");
+        out.println("li { margin-bottom: 10px; padding: 10px; border-radius: 5px; }");
         out.println("</style>");
         out.println("</head><body>");
-        out.println("<h1>Account List</h1>");
-        out.println("<p>Total accounts: " + totalAccounts + "</p>");
-
-        // Добавление простой инфографики
-        out.println("<div style='width: 100%; background-color: #f0f0f0; border-radius: 5px;'>");
-        out.println("<div class='account-bar' style='width: " + Math.min(100, totalAccounts) + "%;'>" + totalAccounts + "</div>");
-        out.println("</div>");
-
+        out.println("<div class='container'>");
+        out.println("<h1>Список учетных записей</h1>");
+        out.println("<div class='account-list'>");
+        out.println("<p>Всего аккаунтов: " + totalAccounts + "</p>");
         out.println("<ul>");
         out.println(accountsListBuilder.toString());
         out.println("</ul>");
+        out.println("</div>");
+        out.println("</div>");
         out.println("</body></html>");
         out.flush();
     }
+
 
 
 
